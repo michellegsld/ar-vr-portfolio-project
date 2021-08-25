@@ -5,8 +5,8 @@ using UnityEngine;
 public class BrokenObject : MonoBehaviour
 {
     public GameObject brokenPrefab; // drag the debris prefab here
-     public float force = 500;
-     public float radius = 15;
+    public float force = 1;
+    public float radius = 15;
 
     // Start is called before the first frame update
     void Start()
