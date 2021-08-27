@@ -21,6 +21,9 @@ public class BreakObject : MonoBehaviour
                 CopyVelocity(gameObject.GetComponent<Rigidbody>(), rb);
             }
 
+            // Disable the GameObject to make invisible
+            gameObject.SetActive(false);
+
             // Delete the original version as object is now "broken"
             Destroy(gameObject);
         }
