@@ -212,9 +212,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 4fcc17f79a6c8474191f2ef96a9fc6fe, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4fcc17f79a6c8474191f2ef96a9fc6fe, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 17a1e7b08ed169344a639147a98c0106, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 4fcc17f79a6c8474191f2ef96a9fc6fe, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4fcc17f79a6c8474191f2ef96a9fc6fe, type: 3}
       propertyPath: m_Name
       value: Vase
