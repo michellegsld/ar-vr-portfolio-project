@@ -292,10 +292,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2014623778241709661, guid: d5d66f8b12f3d4c4db9304bc7249185d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97c778629b6490e48a8d8f5b02158ce4, type: 2}
     - target: {fileID: 919132149155446097, guid: d5d66f8b12f3d4c4db9304bc7249185d, type: 3}
       propertyPath: m_Name
       value: Room
       objectReference: {fileID: 0}
+    - target: {fileID: 1367225043878526138, guid: d5d66f8b12f3d4c4db9304bc7249185d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97c778629b6490e48a8d8f5b02158ce4, type: 2}
+    - target: {fileID: 2511811754567536238, guid: d5d66f8b12f3d4c4db9304bc7249185d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97c778629b6490e48a8d8f5b02158ce4, type: 2}
+    - target: {fileID: 3071157278152018705, guid: d5d66f8b12f3d4c4db9304bc7249185d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97c778629b6490e48a8d8f5b02158ce4, type: 2}
+    - target: {fileID: 7707749559887983363, guid: d5d66f8b12f3d4c4db9304bc7249185d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97c778629b6490e48a8d8f5b02158ce4, type: 2}
     - target: {fileID: 8247994413960396516, guid: d5d66f8b12f3d4c4db9304bc7249185d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

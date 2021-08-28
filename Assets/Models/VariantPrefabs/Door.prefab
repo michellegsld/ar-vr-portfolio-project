@@ -51,9 +51,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 108184655068213094, guid: c108595a1afc80c4f9bb01925c07b2e4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 16e2b6ee43a02c54d9199ed6ebc51763, type: 2}
     - target: {fileID: 919132149155446097, guid: c108595a1afc80c4f9bb01925c07b2e4, type: 3}
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: c108595a1afc80c4f9bb01925c07b2e4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 16e2b6ee43a02c54d9199ed6ebc51763, type: 2}
+    - target: {fileID: 7323055145958570665, guid: c108595a1afc80c4f9bb01925c07b2e4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 16e2b6ee43a02c54d9199ed6ebc51763, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c108595a1afc80c4f9bb01925c07b2e4, type: 3}
