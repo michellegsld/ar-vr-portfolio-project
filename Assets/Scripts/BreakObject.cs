@@ -6,16 +6,18 @@ public class BreakObject : MonoBehaviour
 {
     public GameObject brokenPrefab; // Prefab. Broken version of object
     public Material material;
-    //private int flag = 0;
 
     // Called on when an object collides in order to "break" it
     void OnCollisionEnter(Collision col) {
-
         if (col.gameObject.tag == "Weapon") {
-            var mats = gameObject.GetComponent<Renderer>().sharedMaterials;
-            mats[1] = material;
-            gameObject.GetComponent<Renderer>().sharedMaterials = mats;
-            //flag = 1;
+            int i;
+            Material[] mats = gameObject.GetComponent<Renderer>().sharedMaterials;
+            Material[] newMats = new Material[mats.Length + 1];
+            for (i = 0; i < mats.Length; i++) {
+                newMats[i] = mats[i];
+            }
+            newMats[i] = material;
+            gameObject.GetComponent<Renderer>().sharedMaterials = newMats;
         }
 
         // Only "breaks" if hit hard enough
@@ -52,9 +54,14 @@ public class BreakObject : MonoBehaviour
 
     void OnCollisionExit(Collision col) {
         if (col.gameObject.tag == "Weapon") {
-            var mats = gameObject.GetComponent<Renderer>().sharedMaterials;
-            mats[1] = mats[0];
-            gameObject.GetComponent<Renderer>().sharedMaterials = mats;
+            int i;
+            Material[] mats = gameObject.GetComponent<Renderer>().sharedMaterials;
+            Material[] newMats = new Material[mats.Length - 1];
+            for (i = 0; i < newMats.Length; i++)
+            {
+                newMats[i] = mats[i];
+            }
+            gameObject.GetComponent<Renderer>().sharedMaterials = newMats;
         }
     }
 }
