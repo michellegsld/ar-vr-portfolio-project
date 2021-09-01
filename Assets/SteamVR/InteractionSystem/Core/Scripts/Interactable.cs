@@ -66,6 +66,8 @@ namespace Valve.VR.InteractionSystem
         protected SkinnedMeshRenderer[] highlightSkinnedRenderers;
         protected SkinnedMeshRenderer[] existingSkinnedRenderers;
         protected static Material highlightMat;
+        protected static Material highlightWeapon;
+        protected static Material highlightBreakable;
         [Tooltip("An array of child gameObjects to not render a highlight for. Things like transparent parts, vfx, etc.")]
         public GameObject[] hideHighlight;
 
@@ -106,9 +108,28 @@ namespace Valve.VR.InteractionSystem
 #else
                 highlightMat = (Material)Resources.Load("SteamVR_HoverHighlight", typeof(Material));
 #endif
+            if (highlightWeapon == null)
+#if UNITY_URP
+                highlightWeapon = (Material)Resources.Load("SteamVR_Hover_Weapon_Highlight", typeof(Material));
+#else
+                highlightWeapon = (Material)Resources.Load("SteamVR_Hover_Weapon_Highlight", typeof(Material));
+#endif
+            if (highlightBreakable == null)
+#if UNITY_URP
+                highlightBreakable = (Material)Resources.Load("SteamVR_Hover_Breakable_Highlight", typeof(Material));
+#else
+                highlightBreakable = (Material)Resources.Load("SteamVR_Hover_Breakable_Highlight", typeof(Material));
+#endif
 
             if (highlightMat == null)
                 Debug.LogError("<b>[SteamVR Interaction]</b> Hover Highlight Material is missing. Please create a material named 'SteamVR_HoverHighlight' and place it in a Resources folder", this);
+
+            if (highlightWeapon == null)
+                Debug.LogError("<b>[SteamVR Interaction]</b> Hover Weapon Highlight Material is missing. Please create a material named 'SteamVR_HoverHighlight' and place it in a Resources folder", this);
+
+            if (highlightBreakable == null)
+                Debug.LogError("<b>[SteamVR Interaction]</b> Hover Breakable Highlight Material is missing. Please create a material named 'SteamVR_HoverHighlight' and place it in a Resources folder", this);
+
 
             if (skeletonPoser != null)
             {
@@ -136,7 +157,7 @@ namespace Valve.VR.InteractionSystem
             return false;
         }
 
-        protected virtual void CreateHighlightRenderers()
+        protected virtual void CreateHighlightRenderers(int hoverType)
         {
             existingSkinnedRenderers = this.GetComponentsInChildren<SkinnedMeshRenderer>(true);
             highlightHolder = new GameObject("Highlighter");
@@ -155,7 +176,13 @@ namespace Valve.VR.InteractionSystem
                 Material[] materials = new Material[existingSkinned.sharedMaterials.Length];
                 for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
                 {
-                    materials[materialIndex] = highlightMat;
+                    if (hoverType == 0) {
+                        materials[materialIndex] = highlightMat;
+                    } else if (hoverType == 1) {
+                        materials[materialIndex] = highlightWeapon;
+                    } else if (hoverType == 2) {
+                        materials[materialIndex] = highlightBreakable;
+                    }
                 }
 
                 newSkinned.sharedMaterials = materials;
@@ -188,7 +215,13 @@ namespace Valve.VR.InteractionSystem
                 Material[] materials = new Material[existingRenderer.sharedMaterials.Length];
                 for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
                 {
-                    materials[materialIndex] = highlightMat;
+                    if (hoverType == 0) {
+                        materials[materialIndex] = highlightMat;
+                    } else if (hoverType == 1) {
+                        materials[materialIndex] = highlightWeapon;
+                    } else if (hoverType == 2) {
+                        materials[materialIndex] = highlightBreakable;
+                    }
                 }
                 newRenderer.sharedMaterials = materials;
 
@@ -250,12 +283,19 @@ namespace Valve.VR.InteractionSystem
         {
             wasHovering = isHovering;
             isHovering = true;
+            int hoverType = 0;
 
             hoveringHands.Add(hand);
 
+            if (gameObject.tag == "Weapon") {
+                hoverType = 1;
+            } else if (gameObject.tag == "Breakable") {
+                hoverType = 2;
+            }
+
             if (highlightOnHover == true && wasHovering == false)
             {
-                CreateHighlightRenderers();
+                CreateHighlightRenderers(hoverType);
                 UpdateHighlightRenderers();
             }
         }

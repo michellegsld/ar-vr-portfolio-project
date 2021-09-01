@@ -56,6 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenPrefab: {fileID: 2955080969200185297, guid: a5415b8692c1f1b49b9ce6cac9edaec6, type: 3}
+  material: {fileID: 2100000, guid: d3296bdfb2bcc544b9d73f5674b5dbe2, type: 2}
 --- !u!114 &930099997345407756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenPrefab: {fileID: 5882787624978174544, guid: 7b4281dec938eca48b1ea1562ae265ef, type: 3}
+  material: {fileID: 2100000, guid: d3296bdfb2bcc544b9d73f5674b5dbe2, type: 2}
 --- !u!1001 &3109224537047208585
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Breakable
       objectReference: {fileID: 0}
+    - target: {fileID: 1502877291743220047, guid: 835163a076c4c9f48a9428380d444b92, type: 3}
+      propertyPath: m_TagString
+      value: Breakable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835163a076c4c9f48a9428380d444b92, type: 3}
 --- !u!1 &3835739533737454682 stripped
