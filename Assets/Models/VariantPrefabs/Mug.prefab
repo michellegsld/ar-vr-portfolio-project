@@ -42,7 +42,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenPrefab: {fileID: 56190669037925784, guid: 1e3dae80fe478484da780b5e26c14072, type: 3}
-  material: {fileID: 2100000, guid: d3296bdfb2bcc544b9d73f5674b5dbe2, type: 2}
 --- !u!114 &818784477976577137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +250,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3b49c7d66165dc94d9d2216c32d8345e, type: 3}
       propertyPath: m_Name
       value: Mug
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b49c7d66165dc94d9d2216c32d8345e, type: 3}
+      propertyPath: m_TagString
+      value: Breakable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b49c7d66165dc94d9d2216c32d8345e, type: 3}

@@ -5,21 +5,9 @@ using UnityEngine;
 public class BreakObject : MonoBehaviour
 {
     public GameObject brokenPrefab; // Prefab. Broken version of object
-    public Material material;
 
     // Called on when an object collides in order to "break" it
     void OnCollisionEnter(Collision col) {
-        if (col.gameObject.tag == "Weapon") {
-            int i;
-            Material[] mats = gameObject.GetComponent<Renderer>().sharedMaterials;
-            Material[] newMats = new Material[mats.Length + 1];
-            for (i = 0; i < mats.Length; i++) {
-                newMats[i] = mats[i];
-            }
-            newMats[i] = material;
-            gameObject.GetComponent<Renderer>().sharedMaterials = newMats;
-        }
-
         // Only "breaks" if hit hard enough
         if (col.relativeVelocity.magnitude > 3) {
             // Instantiate a version of brokenPrefab to spawn broken version
@@ -51,17 +39,4 @@ public class BreakObject : MonoBehaviour
 
          broken.velocity = vBroken;
      }
-
-    void OnCollisionExit(Collision col) {
-        if (col.gameObject.tag == "Weapon") {
-            int i;
-            Material[] mats = gameObject.GetComponent<Renderer>().sharedMaterials;
-            Material[] newMats = new Material[mats.Length - 1];
-            for (i = 0; i < newMats.Length; i++)
-            {
-                newMats[i] = mats[i];
-            }
-            gameObject.GetComponent<Renderer>().sharedMaterials = newMats;
-        }
-    }
 }
