@@ -21,6 +21,8 @@ public class BreakObject : MonoBehaviour
                 CopyVelocity(gameObject.GetComponent<Rigidbody>(), rb);
             }
 
+            brokenVersion.GetComponent<AudioSource>().Play();
+
             // Delete the original version as object is now "broken"
             Destroy(gameObject);
         }
