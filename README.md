@@ -19,3 +19,4 @@ Materials/Textures:
 
 Audio:
 "Glass Smash, Bottle, F.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
+Audio clip has been trimmed so the sound plays immediately when played.
