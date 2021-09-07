@@ -21,6 +21,7 @@ public class BreakObject : MonoBehaviour
                 CopyVelocity(gameObject.GetComponent<Rigidbody>(), rb);
             }
 
+            // Play broken item's audio, currently each one is the same glass crash sound
             brokenVersion.GetComponent<AudioSource>().Play();
 
             // Delete the original version as object is now "broken"

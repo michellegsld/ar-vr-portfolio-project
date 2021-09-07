@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8e4ec1264d565c247b35eb8bec90f700
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - offButton: {fileID: 2100000, guid: 2573dcd8c1625614fb83c844d772b7e2, type: 2}
+  - offButtonHighlight: {fileID: 2100000, guid: c4fc03487ddfd1643a973a04d98792cb, type: 2}
+  - onButton: {fileID: 2100000, guid: e6b029e51f7ad194487384b789ae641d, type: 2}
+  - onButtonHighlight: {fileID: 2100000, guid: de917d9f6c22f484fade2ce09f977198, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
